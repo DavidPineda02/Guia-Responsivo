@@ -1,0 +1,61 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative; /* Necesario para posicionamiento absoluto */
+            padding: 20px;
+        }
+
+        .box {
+            width: 100%;
+            height: 100px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Breakpoint 1: Móviles pequeños (hasta 768px) */
+        @media (max-width: 768px) {
+            .box {
+                float: none;
+                width: 100%;
+                position: static;
+            }
+        }
+
+        /* Breakpoint 2: Tablets (769px - 992px) */
+        @media (min-width: 769px) and (max-width: 992px) {
+            .box {
+                float: left;
+                width: 30%;
+                margin-right: 5%;
+                margin-bottom: 0;
+            }
+            .box:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
+
+        /* Breakpoint 3: Escritorio (más de 992px) */
+        @media (min-width: 993px) {
+            .box {
+                position: absolute;
+                width: 20%;
+            }
+            .box:nth-child(1) { 
+                left: 15%; 
+            }
+            .box:nth-child(2) { 
+                left: 40%; 
+            }
+            .box:nth-child(3) { 
+                left: 65%; 
+            }
+        }
